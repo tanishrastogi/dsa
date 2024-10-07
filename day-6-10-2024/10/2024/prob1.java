@@ -3,7 +3,6 @@ import java.util.*;
 
 class Solution {
   public int[] twoSum(int[] nums, int target) {
-      // Brute-force: Check each pair of elements
       for (int i = 0; i < nums.length; i++) {
           for (int j = i + 1; j < nums.length; j++) {
               if (nums[i] + nums[j] == target) {
@@ -11,7 +10,6 @@ class Solution {
               }
           }
       }
-      // Since the problem guarantees a solution, we don't need to return anything here.
       return new int[] {};
   }
 
@@ -57,3 +55,4 @@ class Solution {
 // -109 <= nums[i] <= 109
 // -109 <= target <= 109
 // Only one valid answer exists.
+ 
