@@ -1,0 +1,10 @@
+
+* solved 
+problem 53,  
+problem 121, 
+problem 136, 
+on leetcode using chatgpt
+
+
+
+*solved without using chatgpt

@@ -42,7 +42,7 @@ public class date4 {
         result[0] = 1;
 
         for(int i = 0;i<arr.length;i++){
-            result[i] = result[i-1]*nu
+            // result[i] = result[i-1]*nu
         }
 
         return result;
