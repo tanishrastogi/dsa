@@ -1,6 +1,6 @@
 # 🧠 LeetCode Array Practice
 
-This is a curated list of essential **array problems** from LeetCode to build strong problem-solving skills.
+This is aa curated list of essential **array problems** from LeetCode to build strong problem-solving skills.
 
 ---
 
