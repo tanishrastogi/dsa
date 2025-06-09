@@ -128,7 +128,7 @@ public class day5 {
         for(int i = 0;i<n;i++){
             int number = 0;
             for(int j = 0;j<n;j++){
-                
+                    
             }
         }
         return 0;
