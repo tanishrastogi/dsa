@@ -35,6 +35,7 @@ public class date4 {
         //         System.out.println(a[i]);
         //     }
         // }
+        sc.close();
     }
 
     public static int[] problem238(int[] arr) {
