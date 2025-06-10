@@ -22,8 +22,7 @@ public class day5 {
         int k = sc.nextInt();
         
         // problem930(arr, k);
-        // problem1248(arr, k);
-        problem2261(arr, k, 5);
+        problem1248(arr, k);
 
     }
 
@@ -118,21 +117,7 @@ public class day5 {
     }
 
 
-    public static int problem2261(int[] nums, int k, int p){
-        // k and p will be given 
-        // k signifies maximum number of elements that could be present in the array divisible by p.
-        // return number of such arrays.
-        
-        int n = nums.length;
-        int c = 0;
-        for(int i = 0;i<n;i++){
-            int number = 0;
-            for(int j = 0;j<n;j++){
-                    
-            }
-        }
-        return 0;
-    }
+   
 
 
 }
