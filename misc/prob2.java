@@ -1,5 +1,8 @@
 package misc;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class prob2 {
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
@@ -33,7 +36,7 @@ public class prob2 {
                 l++;
             }
             if(sum<=k){
-
+                
             }
             length = Math.max(length, r-l+1);
             r=r+1;
@@ -45,35 +48,27 @@ public class prob2 {
 
     public static int prob3(String s){
         // LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS.
+
+        int left = 0, right=0;
         int length = s.length();
-
-
-        int longest = 0;
-        // abcdafb
-
-        for(int i =0;i<length;i++){
-            String substring = "";
-            for(int j = i; j<length;j++){
-                char ch = s.charAt(j);
-                if(substring.indexOf(ch)!=-1){
-                    break;
-                }
-                else{
-                    substring=substring+ch;
-                    longest=Math.max(longest, substring.length());
-                    System.out.println(substring+ " "+longest);
-                }
-            }
+        Set<Character> set = new HashSet<>();
+        int maxlen = 0;
+        while(right<length){
+            if(!set.contains(s.charAt(right))){
+                set.add(s.charAt(right));
+                maxlen = Math.max(maxlen, right-left+1);
+                right++;
+            }   
+            else{
+                set.remove(s.charAt(left));
+                left++;
+            } 
         }
 
-        // System.out.println(longest);
+        System.out.println(maxlen);
+        return maxlen;
 
-        return longest;
-        
-
-
-
-        
-        
     }
+
+
 }
