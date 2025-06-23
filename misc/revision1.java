@@ -21,7 +21,9 @@ public class revision1 {
         // // problem1(arr, k);
         // // problem121(arr);
         // problem53();
-        problem169();
+        // problem169();
+        // problem238();
+        problem560();
     }
 
     public static int[] problem1(int[] nums, int k){
@@ -130,26 +132,76 @@ public class revision1 {
     }
 
     public static int[] problem238(){
-        int[] nums = {1,2,3,4};
+        int[] nums = {1,2,4,3};
+        
         int n = nums.length;
-        int[] left = new int[n];
-        int[] right = new int[n];
 
-        left[0] = nums[0];
-        right[n-1] = nums[n-1];
+        // int[] left = new int[n];
+        int[] right = new int[n];
+        int[] output = new int[n];
+
+        int left = 1;
+        right[n-1] = 1; 
 
         // for left side
-        for(int i = 1 ; i<n ; i++){
-            left[i] = left[i-1]*nums[i];
-
-        }
+        // for(int i = 1 ; i<n ; i++){
+        //     left[i] = left[i-1]*nums[i-1];
+        // }
 
         // for right side
-        for(int i=n-2;i>0;i--){
-            right[i] = right[i+1]*nums[i];
+        for(int i=n-2;i>=0;i--){
+            right[i] = right[i+1]*nums[i+1];
+        }
+
+        // calculating output array
+        for(int i = 1;i<n;i++){
+            output[i] = left*right[i];
+            left = left * nums[i];
+            System.out.println(output[i]);
+        }
+
+        output[0] = left * right[0];
+
+        return output;
+    }
+
+    public static int problem560(){
+        
+        int k = 2;
+        int[] nums = {1,1,1};
+        int n = nums.length;
+        int c = 0;
+        HashMap <Integer, Integer> map = new HashMap<>();
+
+        int prefixSum = 0;
+        map.put(0,1);
+
+        for(int i = 0;i<n;i++){
+            prefixSum+=nums[i];
+            if(map.containsKey(prefixSum-k)){
+                c+=map.get(prefixSum-k);
+            }
+            map.put(prefixSum, map.getOrDefault(prefixSum, 0)+1);
+        }
+
+        
+        return c;
+    }
+
+    public static int problem974(){
+        int[] nums = {4,5,0,-2,-3,1};
+        int k = 5;
+        int n = nums.length;
+        HashMap <Integer, Integer> map = new HashMap<>();
+        int[] prefixSum = new int[n];
+
+        int remainder = 1;
+
+
+        for(int i = 0;i<n;i++){
             
         }
 
-        return new int[] {};
+        return 0;
     }
 }
