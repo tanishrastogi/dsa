@@ -1,5 +1,6 @@
 package misc;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -23,7 +24,8 @@ public class revision1 {
         // problem53();
         // problem169();
         // problem238();
-        problem560();
+        // problem560();
+        problem2149();
     }
 
     public static int[] problem1(int[] nums, int k){
@@ -197,11 +199,60 @@ public class revision1 {
 
         int remainder = 1;
 
-
-        for(int i = 0;i<n;i++){
-            
-        }
+        //brute force
 
         return 0;
+    }
+
+    public static int[] problem2149(){
+        int[] nums = {3,1,-2, -5, 2, -4};
+        int n = nums.length;
+        int[] pos = new int[n/2];
+        int[] neg = new int[n/2];
+        int p = 0;
+        int m = 0;
+        int[] result = new int[n];
+        for(int i = 0;i<n;i++){
+            if(nums[i] < 0){
+                neg[m] = nums[i];
+                m++;
+            }
+            else{
+                pos[p] = nums[i];
+                p++;
+            }
+        }
+
+        System.out.println(Arrays.toString(neg));
+
+
+
+        
+
+        // result[0] = nums[0];
+
+        // m = 0;
+        // p = 0;
+
+        // if(result[0]<0) m = 1;
+        // else p = 1;
+        
+        result[0] = pos[0];
+        p = 1;
+        m = 0;
+
+        for(int i = 1;i<n;i++){
+            if(result[i-1]<0){
+                result[i] = pos[p];
+                p++;
+            }
+            else{
+                result[i] = neg[m];
+                m++;
+            }    
+        }
+        // agar last item less than 0 hai toh next item pos se liya jaega // aur agar last item positive hai toh next item neg se liya jaega           
+
+        return result;
     }
 }
