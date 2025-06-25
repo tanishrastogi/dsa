@@ -223,20 +223,6 @@ public class revision1 {
             }
         }
 
-        System.out.println(Arrays.toString(neg));
-
-
-
-        
-
-        // result[0] = nums[0];
-
-        // m = 0;
-        // p = 0;
-
-        // if(result[0]<0) m = 1;
-        // else p = 1;
-        
         result[0] = pos[0];
         p = 1;
         m = 0;
