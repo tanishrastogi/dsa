@@ -35,6 +35,6 @@ public class day7 {
             System.out.println(rev);
 
             return false;
-        }
+        } 
     }
 }
