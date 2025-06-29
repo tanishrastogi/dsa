@@ -1,8 +1,11 @@
 // 26/06/2025
 
+import java.util.HashMap;
+
 public class day7 {
     public static void main(String[] args) {
-        
+        // problem125();
+        problem167();
     }
 
     public static boolean problem125(){
@@ -30,11 +33,24 @@ public class day7 {
             return true;
         }
         else{
+
             System.out.println(copy);
 
             System.out.println(rev);
 
             return false;
+
         } 
+
+
+    }
+
+    public static int[] problem167(){
+
+        HashMap <Integer, Integer> map = new HashMap<>();
+        
+        
+
+        return new int[] {};
     }
 }
