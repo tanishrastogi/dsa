@@ -1,5 +1,7 @@
 // 26/06/2025
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -64,5 +66,37 @@ public class day7 {
         
 
         return new int[] {};
+    }
+
+    public static List<List<Integer>> problem15(){
+        int[] nums = {-1, 0, 1, 1, 2, -1, -4};
+        int k = 0;
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        int n = nums.length;
+        
+        for(int i = 0;i<nums.length;i++){
+            int left = 0, right= n-1;
+            while(left<right){
+                int sum = nums[left]+nums[right]+nums[i];
+                if(sum==k){
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while(left<right && nums[left] == nums[left+1])left++;
+                    while(left<right && nums[right] == nums[right-1])right--;
+
+                    left++;
+                    right--;
+
+                }
+                if(sum<k){
+                    left++;
+                }
+                else if(sum>k){
+                    right--;
+                }
+
+            }
+        }
+        return res;
     }
 }
