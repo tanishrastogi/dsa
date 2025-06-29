@@ -1,5 +1,6 @@
 // 26/06/2025
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class day7 {
@@ -46,9 +47,20 @@ public class day7 {
     }
 
     public static int[] problem167(){
-
-        HashMap <Integer, Integer> map = new HashMap<>();
-        
+        int[] nums = {2,7,11,15};
+        int k = 9;
+        int n = nums.length;
+        Arrays.sort(nums);
+        int left = 0;
+        int right = n-1; 
+        while(left<right){
+            int sum = nums[left]+nums[right];
+            if(sum==k){
+                return new int[] {left+1, right+1};
+            }
+            else if(sum<k) left++;
+            else if(sum>k) right--;
+        }
         
 
         return new int[] {};
