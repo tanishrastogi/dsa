@@ -1,14 +1,16 @@
-// 26/06/2025
+// 26/06/2025 - 01/07/2025
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class day7 {
     public static void main(String[] args) {
         // problem125();
-        problem167();
+        // problem167();
+        // problem15();
+        // problem11();
+        // problem26();
     }
 
     public static boolean problem125(){
@@ -132,4 +134,86 @@ public class day7 {
 
         return insertPos;
     }
+
+    public static int problem27(){
+        int[] nums = {0,1,2,2,3,0,4,2};
+        int val = 2;
+        int n = nums.length;
+        int k = 0;
+
+        for(int i = 0; i<n;i++){
+            if(nums[i] != val){
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        
+
+        return k;
+    }
+
+    public static int[] problem283(){
+        int[] nums = {0,1,0,3,12}; // 1 1 0 3 12    1 3 0 3 12      1 3 12 3 12      
+        int n = nums.length;
+        int zeros = 0;
+        for(int i = 0;i<n;i++){
+            if(nums[i]!=0){
+                nums[zeros] = nums[i];
+                zeros++;
+            }
+        }
+        int i = 0;
+        while(i<n-zeros){
+            nums[n-i-1] = 0;
+            i++; 
+        }
+
+        return nums;
+    }
+
+    public static int[] problem2460(){
+        int[] nums = {1,2,2,1,1,0};
+        int n = nums.length;
+        for(int i = 0;i<n;i++){
+            if(nums[i] == nums[i+1]){
+                nums[i] *= 2;
+                nums[i+1] = 0;
+            }
+        }
+        // 1 4 0 2 0 0
+        int k = 0;
+        for(int i = 0;i<n;i++){
+            if(nums[i]!=0){
+                nums[k] = nums[i];  // 1 4 2 2 0 0
+                k++;
+            }
+        }
+        int i = 0;
+        while(i<n-k){
+            nums[n-i-1] = 0;
+            i++;
+        }
+
+        return nums;
+    }
+
+    public static int[] problem977(){
+        int[] nums = {-4, -1, 0, 3, 10};
+        int n = nums.length;
+        for(int i = 0;i<n;i++){
+            nums[i] *= nums[i]; 
+        }
+
+        Arrays.sort(nums);
+        return nums;
+    }
+
 }
+
+
+// tmrrw: 7 am wake up          - 4 hrs
+// 25 min tiger                 - 3 hrs 35 min
+// 25 min new soap dispenser    - 3 hrs 10 min
+// 2 hr coding class            - 1 hr 10 min
+// 30 min bath                  - 40 min
+// 30 min breakfast             - 0 (11 bj gaye , go to shop)
