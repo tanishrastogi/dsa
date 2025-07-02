@@ -1,5 +1,6 @@
 // 26/06/2025 - 01/07/2025
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -11,6 +12,12 @@ public class day7 {
         // problem15();
         // problem11();
         // problem26();
+        // problem27();
+        // problem283();
+        // problem2460();
+        // problem977();
+        // problem88();
+
     }
 
     public static boolean problem125(){
@@ -207,6 +214,20 @@ public class day7 {
         Arrays.sort(nums);
         return nums;
     }
+
+
+    public static void problem88(){
+        int[] nums1 = {1,2,3,0,0,0}, nums2 = {2,5,6};
+        int m = 3 , n = 3;
+        
+        for(int i = 0;i<n;i++){
+            nums1[m+i] = nums2[i];          // nums1 = {1,2,3,2,5,6}
+        }
+
+        Arrays.sort(nums1);
+    }
+
+    
 
 }
 
